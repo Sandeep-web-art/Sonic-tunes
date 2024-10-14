@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="{% static 'css/external.css' %}" />
+</head>
+<body>
+<h3>MUSIC</h3>
+{% block content %}
+
+
+{% regroup songs by music_director as grouped_songs %}
+<div class="music-directors">
+    {% for group in grouped_songs %}
+        <div class="music-director-group">
+            <h2>{{ group.grouper }}</h2> <!-- Display the music director's name -->
+            <div class="song-list">
+                {% for song in group.list %}
+                    <div class="song-item">
+                        <p>{{ song.title }}</p>
+                        <img src="{{ song.image.url }}" style="width:200px;height:200px;">
+                        <br>
+                        <audio controls autoplay type = "audio/mpeg">
+                            <source src="{{ song.audio_file.url }}">
+                        </audio>
+                        <p>Artist: {{ song.artist }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- <ul>
+    {% for song in songs %}
+        <li>
+        <h3>{{ song.title }}</h3>
+        <img src="{{ song.image.url }}"  style="width:200px;height:200px;">
+        <br> 
+        <audio controls autoplay type = "audio/mpeg">
+            <source src="{{ song.audio_file.url }}">
+        </audio>
+        <p>Artist: {{ song.artist }}</p>
+        <p>Music Director: {{ song.music_director }}</p>
+    </li>
+    {% endfor %}
+</ul> -->
+
+{% endblock content %}
+
+<script src="{% static 'js/audio_player.js' %}"></script>
+
+</body>
+</html>

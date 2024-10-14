@@ -1,0 +1,238 @@
+/* Reset some default styles */
+body,h3,p {
+    margin: 0;
+    font-weight: 600;
+    padding: 0;
+    color: black;
+    text-align: center;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}   
+
+/* Styling the song list */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Space items evenly */
+}
+
+/* Styling each song item */
+li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    width: calc(20% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for song items */
+li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styles */
+h3 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Image styles */
+img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Audio player styles */
+/* audio {
+    width: 100%; Make the audio player full width
+    margin: 10px 0;
+} */
+
+/* Paragraph styles */
+/* p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: black;
+} */
+
+
+nav {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+    padding: 15px; /* Padding around the nav */
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styles */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the items */
+}
+
+nav li {
+    margin: 0 15px; /* Space between menu items */
+}
+
+nav a {
+    color: purple; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding inside the links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Light background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Active Link Style */
+nav a.active {
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+	
+.music-directors {
+    margin: 20px; /* Margin around the whole container */
+    width: auto;
+}
+
+.music-director-group {
+    margin-bottom: 30px; /* Space between groups */
+    /* border: 1px solid #ccc; */
+    border-radius: 8px; /* Rounded corners */
+    /* background-color: #f9f9f9; Light background color */
+    padding: 15px; /* Padding inside the group */
+}
+
+.music-director-group h3 {
+    margin-top: 0; /* Remove top margin */
+}
+
+.music-director-group .song-list {
+    padding: 15px; /* Padding inside the group */
+    /* background-color: #f9f9f9; Light background color */
+}
+
+/* Style for the song list */
+.song-list {
+    display: inline-flex; /* Use flexbox for horizontal alignment */
+    gap: 20px; /* Space between song items */
+}
+
+/* Style for each song item */
+.song-item {
+    width: 200px; /* Fixed width for song items */
+    padding: 10px; /* Padding inside each song item */
+    border: 1px solid #ddd; 
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; 
+    text-align: center; /* Center text */
+}
+
+/* Style for the song title */
+.song-item h2 {
+    font-size: 1.2em; /* Increase font size */
+    flex-shrink: 0; /* Prevents the heading from shrinking */
+    margin-right: 20px;
+    white-space: nowrap; /* Prevents the heading from wrapping */
+}
+
+/* Style for the song description */
+.song-item p {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Increase font size */
+}
+
+/* Style for the image */
+.song-item img {
+    display: inline-flex; /* Make image block level */
+    margin: 10px auto; /* Center the image */
+    margin: 0 auto 10px;
+    width: 200px;
+    height: 200px;
+}
+
+/* Style for the audio player */
+.song-item audio {
+    width: 100%; /* Make audio player full width */    
+    height: 50px;
+}
+
+.music-director-group::-webkit-scrollbar {
+    height: 8px;
+}
+
+.music-director-group::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.music-director-group::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* General styling for the navigation menu */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-around; /* Space items evenly */
+    background-color: #2c3e50; /* Dark background */
+    padding: 20px; /* Padding around the nav */
+}
+
+/* Styling for each list item */
+nav ul li {
+    text-align: center; /* Center-align text and images */
+    flex: 1; /* Allow list items to grow equally */
+    margin: 10px; /* Space between list items */
+}
+
+/* Styling for the links */
+nav ul li a {
+    display: block; /* Block-level element to center image */
+    text-decoration: none; /* Remove underline from links */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    background: linear-gradient(lightyellow,rgb(218, 185, 123));
+}
+
+/* Styling for the images */
+nav ul li img {
+    width: 150px; /* Fixed width for all images */
+    height: 150px; /* Fixed height for all images */
+    object-fit: cover; /* Make sure the image fits the box without stretching */
+    border-radius: 50%; /* Make images circular */
+
+    border: 4px solid #ecf0f1; /* Light border around images */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for the images */
+nav ul li img:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+    border-color: #e74c3c; /* Change border color on hover */
+}
+
+/* Styling for the music director names */
+nav ul li h1 {
+    font-family: 'Arial', sans-serif; /* Clean and readable font */
+    font-size: 18px; /* Set font size for names */
+    font-weight: bold; /* Bold the names */
+    color: purple; /* White text color */
+    margin-top: 15px; /* Space between image and text */
+    text-transform: uppercase; /* Convert names to uppercase for a unique look */
+    letter-spacing: 1px; /* Add some spacing between letters */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
