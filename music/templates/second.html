@@ -1,0 +1,27 @@
+{% extends 'apple.html' %}
+{% load static %}
+{% block content %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'Musical_genres' Musical_genres='pop' %}"><img src = "{% static 'images/pop.jpeg' %}"  alt="no img" /></a><h1>pop</h1></li>
+            <li><a href="{% url 'Musical_genres' Musical_genres='international pop' %}"><img src = "{% static 'images/worldmusic.jpg' %}" /></a><h1>international pop</h1></li>
+            <li><a href="{% url 'Musical_genres' Musical_genres='slow' %}"><img src = "{% static 'images/slow.jpeg' %}" /></a><h1>slow</h1></li>
+        </ul>
+    </nav>
+
+<ul>
+    {% for song in songs1 %}
+        <li>
+                <h3>{{ song.title }}</h3>
+                <img src="{{ song.image.url }}" alt="{{ song.title }} cover" style="width:200px;height:200px;">
+                <br>
+                <audio controls autoplay type="audio/mpeg">
+                    <source src="{{ song.audio_file.url }}" >
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Artist: {{ song.artist }}</p>
+                <p>Music genres: {{ song.Music_genres }}</p>
+            </li>
+        {% endfor %}
+</ul>
+{% endblock %}

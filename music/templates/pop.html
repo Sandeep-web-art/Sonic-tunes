@@ -1,0 +1,24 @@
+{% extends 'main.html'%}
+
+<nav>
+    <a href="{% url 'music_genres' music_genres = 'pop' %}">Indian Pop</a>
+    <a href="{% url 'music_genres' music_genres = 'international pop' %}">International Pop</a>
+    <a href="{% url 'music_genres' music_genres = 'punjabi pop' %}">Punjabi Pop</a>
+</nav>
+{% block content %}
+<ul>
+{% for song in songs %}
+    <li>
+            <h3>{{ song.title }}</h3>
+            <img src="{{ song.image.url }}" alt="{{ song.title }} cover" style="width:200px;height:200px;">
+            <br>
+            <audio controls autoplay type="audio/mpeg">
+                <source src="{{ song.audio_file.url }}" >
+                Your browser does not support the audio element.
+            </audio>
+            <p>Artist: {{ song.artist }}</p>
+            <p>Music Director: {{ song.Musical_genres }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
